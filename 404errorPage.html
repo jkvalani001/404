@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./404errorStylesheet.css">
+</head>
+<body>
+    <div id="app">
+        <div class="main-flex-div">
+            <span>🥶</span>
+            <h1 class="errorCode">{{ errorCode }}</h1>
+            <p class="errorMsg">{{ errorMsg }}</p>
+            <a class="homeLink" href="#">Go To Home Page 🛖</a>
+        </div>
+        
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+        createApp({
+            setup() {
+                const errorCode = ref("404")
+                const errorMsg = ref("Looks like this page froze in the void.")
+                return { errorCode, errorMsg }
+            }
+        }).mount("#app")
+    </script>
+
+</body>
+</html>
